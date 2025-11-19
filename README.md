@@ -33,6 +33,7 @@ _**🎯 Project Features**_
 ✔️ Model files saved and reused for fast inference
 
 _**🧠 Machine Learning Details**_
+
 Model Used
 
 Random Forest Classifier (best performing model)
@@ -53,6 +54,7 @@ The system predicts 4 body status categories, derived from the dataset.
 (If you'd like, I can insert the exact names of the 4 categories.)
 
 _**🏗️ Tech Stack**_
+
 
 **Backend**
 
@@ -78,28 +80,29 @@ HTML (Jinja2 templates)
 CSS (from static/)
 
 _**📂 Project Structure**_
-Doshas/
-│
-├── app.py                         # Flask application
-├── database.py                    # Database logic (optional)
-├── dataset.csv                    # Main dataset
-├── dataset1.csv                   # Additional dataset
-│
-├── training.ipynb                 # Model training steps
-├── prediction.ipynb               # Testing predictions
-│
-├── random_forest_model.pkl        # Final trained model
-├── scaler.pkl                     # Scaler for features
-├── label_encoders.pkl             # Encoders for categories
-├── feature_names.pkl              # Saved feature names
-│
-├── templates/                     # UI HTML templates
-│     ├── index.html
-│     └── result.html
-│
-├── static/                        # CSS, JS, assets
-│
-└── instance/                      # Flask instance folder
+
+                                                                      Doshas/
+                                                                      │
+                                                                      ├── app.py                         # Flask application
+                                                                      ├── database.py                    # Database logic (optional)
+                                                                      ├── dataset.csv                    # Main dataset
+                                                                      ├── dataset1.csv                   # Additional dataset
+                                                                      │
+                                                                      ├── training.ipynb                 # Model training steps
+                                                                      ├── prediction.ipynb               # Testing predictions
+                                                                      │
+                                                                      ├── random_forest_model.pkl        # Final trained model
+                                                                      ├── scaler.pkl                     # Scaler for features
+                                                                      ├── label_encoders.pkl             # Encoders for categories
+                                                                      ├── feature_names.pkl              # Saved feature names
+                                                                      │
+                                                                      ├── templates/                     # UI HTML templates
+                                                                      │     ├── index.html
+                                                                      │     └── result.html
+                                                                      │
+                                                                      ├── static/                        # CSS, JS, assets
+                                                                      │
+                                                                      └── instance/                      # Flask instance folder
 
 _**🚀 How to Run the Project**_
 📌 Option 1: Run the Flask Web Application
