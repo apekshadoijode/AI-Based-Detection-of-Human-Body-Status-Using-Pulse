@@ -77,6 +77,7 @@ Jupyter Notebook
 
 **Frontend**
 HTML (Jinja2 templates)
+
 CSS (from static/)
 
 _**📂 Project Structure**_
@@ -156,8 +157,10 @@ Ayurvedic literature on Nadi Pariksha
 Scikit-learn official documentation
 
 Flask official documentation
-_
-**👩‍💻 Author**_
 
-Apeksha D M
+
+
+_**👩‍💻 Author**_
+
+**Apeksha D M**
 GitHub: apekshadoijode
