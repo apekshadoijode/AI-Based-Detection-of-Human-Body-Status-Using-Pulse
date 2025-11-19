@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row">
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header text-center">
+                <h4>Your Dosha Results</h4>
+            </div>
+            <div class="card-body text-center">
+                <h1 class="display-4">{{ results }}</h1>
+                <p class="text-muted"><b>Your Body Type :</b> {{ results }}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-8">
+        <!-- Food Recommendations -->
+        <div class="card recommendation-card food mb-3">
+            <div class="card-header">
+                <h5>🍎 Food Recommendations</h5>
+            </div>
+            <div class="card-body">
+                <h6>Recommended Foods:</h6>
+                <ul>
+                    {% for item in data.food_recommended %}
+                    <li>{{ item }}</li>
+                    {% endfor %}
+                </ul>
+                <h6>Foods to Avoid:</h6>
+                <ul>
+                    {% for item in data.food_avoid %}
+                    <li>{{ item }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+        <!-- Exercise Recommendations -->
+        <div class="card recommendation-card exercise mb-3">
+            <div class="card-header">
+                <h5>💪 Exercise Recommendations</h5>
+            </div>
+            <div class="card-body">
+                <ul>
+                    {% for item in data.exercise %}
+                    <li>{{ item }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+        <!-- Diet & Lifestyle -->
+        <div class="card recommendation-card diet">
+            <div class="card-header">
+                <h5>🥗 Diet & Lifestyle Recommendations</h5>
+            </div>
+            <div class="card-body">
+                <ul>
+                    {% for item in data.lifestyle %}
+                    <li>{{ item }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+        <div class="text-center mt-4">
+            <a href="{{ url_for('data_entry') }}" class="btn btn-primary me-2">Take Test Again</a>
+            <a href="{{ url_for('profile') }}" class="btn btn-outline-primary">View Profile</a>
+        </div>
+    </div>
+</div>
+
+<style>
+.progress-bar.vata-score { background-color: #8B4513; }
+.progress-bar.pitta-score { background-color: #DC143C; }
+.progress-bar.kapha-score { background-color: #2E8B57; }
+</style>
+{% endblock %}

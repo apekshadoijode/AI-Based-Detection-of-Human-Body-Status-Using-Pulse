@@ -1,0 +1,461 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Animated Hero Section -->
+<section class="hero-section py-5 mb-5" >
+    <div class="container" style="background-color:black;">
+        <div class="row align-items-center min-vh-75">
+            <div class="col-lg-6" >
+                <h1 class="display-4 fw-bold mb-4 animate-typing">Discover Your <span class="dosha-gradient">Ayurvedic Body Type</span></h1>
+                <p class="lead mb-4">Take our comprehensive Dosha quiz to understand your unique mind-body constitution and receive personalized recommendations for diet, lifestyle, and wellness practices.</p>
+                <div class="d-flex flex-wrap gap-3">
+                    {% if session.user_id %}
+                        <a href="{{ url_for('data_entry') }}" class="btn btn-primary btn-lg px-4 pulse-animation">Take the Dosha Test</a>
+                    {% else %}
+                        <a href="{{ url_for('register') }}" class="btn btn-primary btn-lg px-4 me-3 pulse-animation">Get Started</a>
+                        <a href="{{ url_for('login') }}" class="btn btn-outline-primary btn-lg px-4">Login</a>
+                    {% endif %}
+                </div>
+                <div class="mt-4">
+                    <div class="d-flex align-items-center text-muted">
+                        <div class="me-3">
+                            <i class="fas fa-users me-1"></i>
+                            <span id="user-count">10,000+</span> users
+                        </div>
+                        <div class="me-3">
+                            <i class="fas fa-star me-1"></i>
+                            <span>4.8/5 rating</span>
+                        </div>
+                        <div>
+                            <i class="fas fa-clock me-1"></i>
+                            <span>5 min test</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="floating-animation">
+                    <div class="dosha-orb vata-orb"></div>
+                    <div class="dosha-orb pitta-orb"></div>
+                    <div class="dosha-orb kapha-orb"></div>
+                    <img src="https://media.istockphoto.com/id/2166911318/vector/ayurveda-doshas-infographic-vector-illustration-poster-vata-pitta-kapha-doshas-and-five.jpg?s=612x612&w=is&k=20&c=U5XA6oBZfJSk0KjLDYZqKCAfbSWdRZMbH_Otgamrj9o=" alt="Ayurvedic Elements" class="img-fluid hero-image">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Interactive Dosha Cards -->
+<section class="dosha-cards py-5">
+    <div class="container">
+        <div class="row text-center mb-5">
+            <div class="col">
+                <h2 class="fw-bold">The Three Doshas</h2>
+                <p class="text-muted">Understand the fundamental energies that govern your physical and mental characteristics</p>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 border-0 shadow-sm dosha-card" data-dosha="vata">
+                    <div class="card-body text-center p-4">
+                        <div class="dosha-icon vata mb-3">
+                            <span class="display-4">🌬️</span>
+                        </div>
+                        <h4 class="card-title fw-bold">Vata</h4>
+                        <p class="card-text">Governed by air and space elements. Vata types are creative, energetic, and lively when in balance.</p>
+                        <div class="dosha-details">
+                            <ul class="list-unstyled text-start">
+                                <li><i class="fas fa-check-circle me-2"></i>Light, thin build</li>
+                                <li><i class="fas fa-check-circle me-2"></i>Quick to learn and grasp new knowledge</li>
+                                <li><i class="fas fa-check-circle me-2"></i>Tendency toward dry skin</li>
+                                <li><i class="fas fa-check-circle me-2"></i>Enthusiasm, vivaciousness</li>
+                            </ul>
+                            <button class="btn btn-outline-primary mt-3 read-more-btn">Read More</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 border-0 shadow-sm dosha-card" data-dosha="pitta">
+                    <div class="card-body text-center p-4">
+                        <div class="dosha-icon pitta mb-3">
+                            <span class="display-4">🔥</span>
+                        </div>
+                        <h4 class="card-title fw-bold">Pitta</h4>
+                        <p class="card-text">Governed by fire and water elements. Pitta types have a fiery nature that manifests in both body and mind.</p>
+                        <div class="dosha-details">
+                            <ul class="list-unstyled text-start">
+                                <li><i class="fas fa-check-circle me-2"></i>Medium, muscular build</li>
+                                <li><i class="fas fa-check-circle me-2"></i>Sharp intellect, good concentration</li>
+                                <li><i class="fas fa-check-circle me-2"></i>Fair, reddish complexion</li>
+                                <li><i class="fas fa-check-circle me-2"></i>Strong digestion, strong appetite</li>
+                            </ul>
+                            <button class="btn btn-outline-primary mt-3 read-more-btn">Read More</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 border-0 shadow-sm dosha-card" data-dosha="kapha">
+                    <div class="card-body text-center p-4">
+                        <div class="dosha-icon kapha mb-3">
+                            <span class="display-4">💧</span>
+                        </div>
+                        <h4 class="card-title fw-bold">Kapha</h4>
+                        <p class="card-text">Governed by earth and water elements. Kapha types are strong, sturdy, and blessed with strength and endurance.</p>
+                        <div class="dosha-details">
+                            <ul class="list-unstyled text-start">
+                                <li><i class="fas fa-check-circle me-2"></i>Solid, powerful build</li>
+                                <li><i class="fas fa-check-circle me-2"></i>Tranquil, relaxed personality</li>
+                                <li><i class="fas fa-check-circle me-2"></i>Soft hair and skin</li>
+                                <li><i class="fas fa-check-circle me-2"></i>Slow digestion, mild hunger</li>
+                            </ul>
+                            <button class="btn btn-outline-primary mt-3 read-more-btn">Read More</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Animated Process Section -->
+<section class="process-section py-5 bg-light rounded-3">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <h2 class="fw-bold mb-4">How It Works</h2>
+                <div class="process-steps">
+                    <div class="step mb-4" data-step="1">
+                        <div class="d-flex align-items-center mb-2">
+                            <div class="step-number me-3 bg-primary text-white rounded-circle d-flex align-items-center justify-content-center">1</div>
+                            <h4 class="mb-0">Take the Assessment</h4>
+                        </div>
+                        <p class="ms-5">Answer questions about your physical characteristics, mental tendencies, and lifestyle habits.</p>
+                    </div>
+                    <div class="step mb-4" data-step="2">
+                        <div class="d-flex align-items-center mb-2">
+                            <div class="step-number me-3 bg-primary text-white rounded-circle d-flex align-items-center justify-content-center">2</div>
+                            <h4 class="mb-0">Get Your Dosha Analysis</h4>
+                        </div>
+                        <p class="ms-5">Receive a detailed breakdown of your Vata, Pitta, and Kapha percentages.</p>
+                    </div>
+                    <div class="step mb-4" data-step="3">
+                        <div class="d-flex align-items-center mb-2">
+                            <div class="step-number me-3 bg-primary text-white rounded-circle d-flex align-items-center justify-content-center">3</div>
+                            <h4 class="mb-0">Personalized Recommendations</h4>
+                        </div>
+                        <p class="ms-5">Get tailored advice on diet, exercise, daily routine, and wellness practices for your unique constitution.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="process-visual">
+                    <div class="step-visual active" data-step="1">
+                        <img src="https://www.shutterstock.com/image-vector/vata-pitta-kapha-doshas-ectomorph-260nw-1703596471.jpg" alt="Assessment Process" class="img-fluid">
+                    </div>
+                    <div class="step-visual" data-step="2">
+                        <img src="https://www.shutterstock.com/image-vector/ayurveda-vector-illustration-elements-vata-600nw-2350314657.jpg" alt="Analysis Process" class="img-fluid">
+                    </div>
+                    <div class="step-visual" data-step="3">
+                        <img src="https://www.shutterstock.com/image-vector/ayurveda-doshas-according-three-substances-600nw-1483344017.jpg" alt="Recommendations Process" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Dynamic Testimonials Carousel -->
+<section class="testimonials py-5">
+    <div class="container">
+        <div class="row text-center mb-5">
+            <div class="col">
+                <h2 class="fw-bold">What Our Users Say</h2>
+            </div>
+        </div>
+        
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="active"></button>
+                        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1"></button>
+                        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="2"></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="card border-0 shadow-sm testimonial-card">
+                                <div class="card-body p-5">
+                                    <div class="d-flex align-items-center mb-4">
+                                        <div class="avatar bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3">S</div>
+                                        <div>
+                                            <h5 class="mb-0">Sarah M.</h5>
+                                            <small class="text-muted">Vata-Pitta Type</small>
+                                        </div>
+                                    </div>
+                                    <p class="card-text fs-5">"The dosha analysis completely changed how I approach my health. The dietary recommendations have helped with my digestion issues tremendously!"</p>
+                                    <div class="rating mt-3">
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="card border-0 shadow-sm testimonial-card">
+                                <div class="card-body p-5">
+                                    <div class="d-flex align-items-center mb-4">
+                                        <div class="avatar bg-success text-white rounded-circle d-flex align-items-center justify-content-center me-3">J</div>
+                                        <div>
+                                            <h5 class="mb-0">James L.</h5>
+                                            <small class="text-muted">Kapha Type</small>
+                                        </div>
+                                    </div>
+                                    <p class="card-text fs-5">"I've struggled with low energy for years. Understanding my Kapha constitution and following the lifestyle tips has given me more vitality than ever before."</p>
+                                    <div class="rating mt-3">
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="card border-0 shadow-sm testimonial-card">
+                                <div class="card-body p-5">
+                                    <div class="d-flex align-items-center mb-4">
+                                        <div class="avatar bg-warning text-white rounded-circle d-flex align-items-center justify-content-center me-3">P</div>
+                                        <div>
+                                            <h5 class="mb-0">Priya K.</h5>
+                                            <small class="text-muted">Pitta-Vata Type</small>
+                                        </div>
+                                    </div>
+                                    <p class="card-text fs-5">"As someone with a Pitta-Vata imbalance, the stress management techniques have been life-changing. My sleep quality has improved dramatically!"</p>
+                                    <div class="rating mt-3">
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Dosha Modal -->
+<div class="modal fade" id="doshaModal" tabindex="-1" aria-labelledby="doshaModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="doshaModalLabel">Dosha Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div id="doshaContent"></div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    // Animate elements on scroll
+    document.addEventListener('DOMContentLoaded', function() {
+        // Animate user count
+        animateValue('user-count', 0, 10000, 2000);
+        
+        // Process steps animation
+        const processSteps = document.querySelectorAll('.step');
+        const stepVisuals = document.querySelectorAll('.step-visual');
+        
+        processSteps.forEach(step => {
+            step.addEventListener('mouseenter', function() {
+                const stepNum = this.getAttribute('data-step');
+                
+                // Update active step visual
+                stepVisuals.forEach(visual => {
+                    visual.classList.remove('active');
+                    if (visual.getAttribute('data-step') === stepNum) {
+                        visual.classList.add('active');
+                    }
+                });
+            });
+        });
+        
+        // Dosha card interactions
+        const doshaCards = document.querySelectorAll('.dosha-card');
+        const readMoreBtns = document.querySelectorAll('.read-more-btn');
+        
+        doshaCards.forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px)';
+                this.style.transition = 'transform 0.3s ease';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+        
+        readMoreBtns.forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                const doshaType = this.closest('.dosha-card').getAttribute('data-dosha');
+                showDoshaDetails(doshaType);
+            });
+        });
+        
+        // Social links animation
+        const socialLinks = document.querySelectorAll('.social-link');
+        socialLinks.forEach(link => {
+            link.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.2)';
+                this.style.transition = 'transform 0.2s ease';
+            });
+            
+            link.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1)';
+            });
+        });
+    });
+    
+    // Animate counter
+    function animateValue(id, start, end, duration) {
+        const obj = document.getElementById(id);
+        let startTimestamp = null;
+        const step = (timestamp) => {
+            if (!startTimestamp) startTimestamp = timestamp;
+            const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+            const value = Math.floor(progress * (end - start) + start);
+            obj.innerHTML = value.toLocaleString() + '+';
+            if (progress < 1) {
+                window.requestAnimationFrame(step);
+            }
+        };
+        window.requestAnimationFrame(step);
+    }
+    
+    // Show dosha details in modal
+    function showDoshaDetails(doshaType) {
+        const modalTitle = document.getElementById('doshaModalLabel');
+        const modalContent = document.getElementById('doshaContent');
+        
+        // In a real application, you would fetch this data from your server
+        const doshaData = {
+            vata: {
+                title: 'Vata Dosha',
+                description: 'Vata is the energy of movement and is often called the "King of the Doshas" since it governs the body\'s greater life force and gives motion to Pitta and Kapha.',
+                characteristics: [
+                    'Creative, quick to learn and grasp new knowledge',
+                    'Tendency to be thin with prominent joints and dry skin',
+                    'Enthusiasm, vivaciousness, imaginative',
+                    'Changeable moods, irregular daily routine',
+                    'Respond to stress with fear, worry, and anxiety',
+                    'Tendency to act on impulse'
+                ],
+                balancingTips: [
+                    'Keep warm and avoid cold foods',
+                    'Follow a regular daily routine',
+                    'Get plenty of rest',
+                    'Eat warm, moist, nourishing foods',
+                    'Practice calming activities like yoga and meditation'
+                ]
+            },
+            pitta: {
+                title: 'Pitta Dosha',
+                description: 'Pitta is the energy of transformation and metabolism. It governs digestion, absorption, assimilation, nutrition, metabolism, and body temperature.',
+                characteristics: [
+                    'Medium build, strength, and endurance',
+                    'Sharp intellect, good concentration',
+                    'Strong digestion, strong appetite',
+                    'Fair or reddish skin, often with freckles',
+                    'Enterprising character, likes challenges',
+                    'Tendency to be impatient and irritable'
+                ],
+                balancingTips: [
+                    'Avoid excessive heat and steam',
+                    'Eat cooling, non-spicy foods',
+                    'Exercise during the cooler part of the day',
+                    'Practice moderation in work and activity',
+                    'Cultivate contentment and peace of mind'
+                ]
+            },
+            kapha: {
+                title: 'Kapha Dosha',
+                description: 'Kapha is the energy of building and lubrication that provides the body with physical form, structure, and the smooth functioning of all its parts.',
+                characteristics: [
+                    'Solid, powerful build, great physical strength and endurance',
+                    'Tranquil, relaxed personality; slow to anger',
+                    'Soft hair and skin; large, soft eyes',
+                    'Slow digestion, mild hunger',
+                    'Affectionate, tolerant, forgiving',
+                    'Tendency to be possessive and complacent'
+                ],
+                balancingTips: [
+                    'Get plenty of physical activity',
+                    'Eat light, dry, warm foods',
+                    'Vary your routine regularly',
+                    'Stay warm in damp, cold weather',
+                    'Use warm, stimulating spices in cooking'
+                ]
+            }
+        };
+        
+        const data = doshaData[doshaType];
+        
+        modalTitle.textContent = data.title;
+        modalContent.innerHTML = `
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Description</h5>
+                    <p>${data.description}</p>
+                    
+                    <h5 class="mt-4">Characteristics</h5>
+                    <ul>
+                        ${data.characteristics.map(char => `<li>${char}</li>`).join('')}
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h5>Balancing Tips</h5>
+                    <ul>
+                        ${data.balancingTips.map(tip => `<li>${tip}</li>`).join('')}
+                    </ul>
+                    
+                    <div class="mt-4 p-3 bg-light rounded">
+                        <h6>Did You Know?</h6>
+                        <p class="mb-0">Most people have one or two dominant doshas. Very few people are purely one dosha type.</p>
+                    </div>
+                </div>
+            </div>
+        `;
+        
+        // Show the modal
+        const doshaModal = new bootstrap.Modal(document.getElementById('doshaModal'));
+        doshaModal.show();
+    }
+</script>
+{% endblock %}

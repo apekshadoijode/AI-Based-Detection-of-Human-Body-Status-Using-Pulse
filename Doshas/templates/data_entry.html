@@ -1,0 +1,256 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="data-entry-container">
+    <div class="card">
+        <div class="card-header text-center">
+            <h3>Dosha Assessment Questionnaire</h3>
+            <p class="mb-0">Please answer all questions based on your natural tendencies</p>
+        </div>
+        <div class="card-body">
+            <form method="POST">
+                <div class="row">
+                    <!-- Body Frame -->
+                <div class="col-md-6 mb-3"> 
+    <label class="form-label">Body Frame</label>
+    <select class="form-control" name="body_frame" required>
+        <option value="">Select</option>
+        <option value="Well Built">Well Built</option>
+        <option value="Thin and Lean">Thin and Lean</option>
+        <option value="Medium">Medium</option>
+    </select>
+</div>
+
+<div class="col-md-6 mb-3"> 
+    <label class="form-label">Type of Hair</label>
+    <select class="form-control" name="type_of_hair" required>
+        <option value="">Select</option>
+        <option value="Dry">Dry</option>
+        <option value="Normal">Normal</option>
+        <option value="Greasy">Greasy</option>
+    </select>
+</div>
+
+<div class="col-md-6 mb-3"> 
+    <label class="form-label">Color of Hair</label>
+    <select class="form-control" name="color_of_hair" required>
+        <option value="">Select</option>
+        <option value="Grey">Grey</option>
+        <option value="Brown">Brown</option>
+        <option value="Black">Black</option>
+    </select>
+</div>
+
+<div class="col-md-6 mb-3"> 
+    <label class="form-label">Skin</label>
+    <select class="form-control" name="skin" required>
+        <option value="">Select</option>
+        <option value="Soft,Sweating">Soft,Sweating</option>
+        <option value="Moist,Greasy">Moist,Greasy</option>
+        <option value="Dry,Rough">Dry,Rough</option>
+    </select>
+</div>
+
+<div class="col-md-6 mb-3"> 
+    <label class="form-label">Complexion</label>
+    <select class="form-control" name="complexion" required>
+        <option value="">Select</option>
+        <option value="Pinkish">Pinkish</option>
+        <option value="Dark">Dark</option>
+        <option value="Glowing">Glowing</option>
+    </select>
+</div>
+
+<div class="col-md-6 mb-3"> 
+    <label class="form-label">Body Weight</label>
+    <select class="form-control" name="body_weight" required>
+        <option value="">Select</option>
+        <option value="Underweight">Underweight</option>
+        <option value="Overweight">Overweight</option>
+        <option value="Normal">Normal</option>
+    </select>
+</div>
+
+<div class="col-md-6 mb-3"> 
+    <label class="form-label">Nails</label>
+    <select class="form-control" name="nails" required>
+        <option value="">Select</option>
+        <option value="Redish">Redish</option>
+        <option value="Blackish">Blackish</option>
+        <option value="Pinkish">Pinkish</option>
+    </select>
+</div>
+
+<div class="col-md-6 mb-3"> 
+    <label class="form-label">Size and Color of the Teeth</label>
+    <select class="form-control" name="size_and_color_of_the_teeth" required>
+        <option value="">Select</option>
+        <option value="Large,White">Large,White</option>
+        <option value="Medium,Yellowish">Medium,Yellowish</option>
+        <option value="Irregular,Blackish">Irregular,Blackish</option>
+    </select>
+</div>
+
+<div class="col-md-6 mb-3"> 
+    <label class="form-label">Pace of Performing Work</label>
+    <select class="form-control" name="pace_of_performing_work" required>
+        <option value="">Select</option>
+        <option value="Fast">Fast</option>
+        <option value="Medium">Medium</option>
+        <option value="Slow">Slow</option>
+    </select>
+</div>
+
+<div class="col-md-6 mb-3"> 
+    <label class="form-label">Mental Activity</label>
+    <select class="form-control" name="mental_activity" required>
+        <option value="">Select</option>
+        <option value="Aggressive">Aggressive</option>
+        <option value="Restless">Restless</option>
+        <option value="Stable">Stable</option>
+    </select>
+</div>
+
+<div class="col-md-6 mb-3"> 
+    <label class="form-label">Memory</label>
+    <select class="form-control" name="memory" required>
+        <option value="">Select</option>
+        <option value="Good Memory">Good Memory</option>
+        <option value="Long Term">Long Term</option>
+        <option value="Short term">Short term</option>
+    </select>
+</div>
+
+<div class="col-md-6 mb-3"> 
+    <label class="form-label">Sleep Pattern</label>
+    <select class="form-control" name="sleep_pattern" required>
+        <option value="">Select</option>
+        <option value="Sleepy">Sleepy</option>
+        <option value="Moderate">Moderate</option>
+        <option value="Less">Less</option>
+    </select>
+</div>
+
+<div class="col-md-6 mb-3"> 
+    <label class="form-label">Weather Conditions</label>
+    <select class="form-control" name="weather_conditions" required>
+        <option value="">Select</option>
+        <option value="Dislike Heat">Dislike Heat</option>
+        <option value="Dislike Moist">Dislike Moist</option>
+        <option value="Dislike Cold">Dislike Cold</option>
+    </select>
+</div>
+
+<div class="col-md-6 mb-3"> 
+    <label class="form-label">Reaction under Adverse Situations</label>
+    <select class="form-control" name="reaction_under_adverse_situations" required>
+        <option value="">Select</option>
+        <option value="Anger">Anger</option>
+        <option value="Calm">Calm</option>
+        <option value="Anxiety">Anxiety</option>
+    </select>
+</div>
+
+<div class="col-md-6 mb-3"> 
+    <label class="form-label">Mood</label>
+    <select class="form-control" name="mood" required>
+        <option value="">Select</option>
+        <option value="Changes Quickly">Changes Quickly</option>
+        <option value="Constant">Constant</option>
+        <option value="Changes Slowly">Changes Slowly</option>
+    </select>
+</div>
+
+<div class="col-md-6 mb-3"> 
+    <label class="form-label">Eating Habit</label>
+    <select class="form-control" name="eating_habit" required>
+        <option value="">Select</option>
+        <option value="Irregular Chewing">Irregular Chewing</option>
+        <option value="Improper Chewing">Improper Chewing</option>
+        <option value="Proper Chewing">Proper Chewing</option>
+    </select>
+</div>
+
+<div class="col-md-6 mb-3"> 
+    <label class="form-label">Hunger</label>
+    <select class="form-control" name="hunger" required>
+        <option value="">Select</option>
+        <option value="Skips Meal">Skips Meal</option>
+        <option value="Sudden and Sharp">Sudden and Sharp</option>
+        <option value="Irregular">Irregular</option>
+    </select>
+</div>
+
+<div class="col-md-6 mb-3"> 
+    <label class="form-label">Body Temperature</label>
+    <select class="form-control" name="body_temperature" required>
+        <option value="">Select</option>
+        <option value="Less than Normal">Less than Normal</option>
+        <option value="Normal">Normal</option>
+        <option value="More than Normal">More than Normal</option>
+    </select>
+</div>
+
+<div class="col-md-6 mb-3"> 
+    <label class="form-label">Joints</label>
+    <select class="form-control" name="joints" required>
+        <option value="">Select</option>
+        <option value="Weak">Weak</option>
+        <option value="Heavy">Heavy</option>
+        <option value="Healthy">Healthy</option>
+    </select>
+</div>
+
+<div class="col-md-6 mb-3"> 
+    <label class="form-label">Nature</label>
+    <select class="form-control" name="nature" required>
+        <option value="">Select</option>
+        <option value="Forgiving,Grateful">Forgiving,Grateful</option>
+        <option value="Jealous,Fearful">Jealous,Fearful</option>
+        <option value="Egoistic,Fearless">Egoistic,Fearless</option>
+    </select>
+</div>
+
+<div class="col-md-6 mb-3"> 
+    <label class="form-label">Body Energy</label>
+    <select class="form-control" name="body_energy" required>
+        <option value="">Select</option>
+        <option value="Medium">Medium</option>
+        <option value="Low">Low</option>
+        <option value="High">High</option>
+    </select>
+</div>
+
+<div class="col-md-6 mb-3"> 
+    <label class="form-label">Quality of Voice</label>
+    <select class="form-control" name="quality_of_voice" required>
+        <option value="">Select</option>
+        <option value="Deep">Deep</option>
+        <option value="Fast">Fast</option>
+        <option value="Rough">Rough</option>
+    </select>
+</div>
+
+<div class="col-md-6 mb-3"> 
+    <label class="form-label">Body Odor</label>
+    <select class="form-control" name="body_odor" required>
+        <option value="">Select</option>
+        <option value="Strong">Strong</option>
+        <option value="Negligible">Negligible</option>
+        <option value="Mild">Mild</option>
+    </select>
+</div>
+
+				
+				
+				
+				</div>
+
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-primary btn-lg">Calculate My Dosha</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
