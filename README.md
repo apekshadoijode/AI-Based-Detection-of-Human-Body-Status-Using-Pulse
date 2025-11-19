@@ -1,9 +1,9 @@
-**AI-Based Detection of Human Body Status Using Pulse (Inspired by Nadi Pariksha)**
+_**AI-Based Detection of Human Body Status Using Pulse (Inspired by Nadi Pariksha)**_
 
 This project is a Machine Learning + Flask web application that predicts four different human body status categories using pulse-related features, inspired by the Ayurvedic diagnostic method Nadi Pariksha.
 It combines traditional Ayurvedic insights with modern ML techniques to build a practical, data-driven health assessment system.
 
-**🌟 Overview**
+_**🌟 Overview**_
 
 This system analyzes pulse-related input data and uses a trained Random Forest Classifier to predict the user’s body status.
 The project includes:
@@ -18,7 +18,7 @@ Model deployment with .pkl files for fast inference
 
 Datasets (dataset.csv, dataset1.csv) are used to extract statistical & physiological features related to pulse signals.
 
-**🎯 Project Features**
+_**🎯 Project Features**_
 
 ✔️ Preprocessing of pulse-related numerical & categorical features
 
@@ -32,7 +32,7 @@ Datasets (dataset.csv, dataset1.csv) are used to extract statistical & physiolog
 
 ✔️ Model files saved and reused for fast inference
 
-**🧠 Machine Learning Details**
+_**🧠 Machine Learning Details**_
 Model Used
 
 Random Forest Classifier (best performing model)
@@ -52,18 +52,22 @@ feature_names.pkl – Ensures input order consistency
 The system predicts 4 body status categories, derived from the dataset.
 (If you'd like, I can insert the exact names of the 4 categories.)
 
-**🏗️ Tech Stack**
+_**🏗️ Tech Stack**_
 
 **Backend**
 
 Python
+
 Flask
 
 **Machine Learning**
 
 scikit-learn
+
 Pandas
+
 NumPy
+
 Pickle
 
 **Notebooks**
@@ -73,7 +77,7 @@ Jupyter Notebook
 HTML (Jinja2 templates)
 CSS (from static/)
 
-**📂 Project Structure**
+_**📂 Project Structure**_
 Doshas/
 │
 ├── app.py                         # Flask application
@@ -97,7 +101,7 @@ Doshas/
 │
 └── instance/                      # Flask instance folder
 
-**🚀 How to Run the Project**
+_**🚀 How to Run the Project**_
 📌 Option 1: Run the Flask Web Application
 
 This is the main app used for real-time predictions.
@@ -125,7 +129,7 @@ jupyter notebook
 
 This will open the notebook interface in your browser.
 
-📊 Training & Results
+_**📊 Training & Results**_
 
 Random Forest gave the highest accuracy among tested models
 
@@ -135,12 +139,12 @@ Model components were saved separately for reproducibility
 
 (Add your accuracy, confusion matrix, or graphs here if you want.)
 
-📘 Ayurvedic Basis
+**_📘 Ayurvedic Basis_**
 
 This system is inspired by Nadi Pariksha, a diagnostic method in Ayurveda that uses pulse characteristics to assess dosha balance and body conditions.
 The project attempts to translate these ancient diagnostic principles into quantifiable ML features.
 
-📚 References
+_**📚 References**_
 
 Research papers on pulse signal analysis
 
@@ -149,8 +153,8 @@ Ayurvedic literature on Nadi Pariksha
 Scikit-learn official documentation
 
 Flask official documentation
-
-👩‍💻 Author
+_
+**👩‍💻 Author**_
 
 Apeksha D M
 GitHub: apekshadoijode
